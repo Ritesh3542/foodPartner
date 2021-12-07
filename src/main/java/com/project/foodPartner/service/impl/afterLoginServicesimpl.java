@@ -8,9 +8,11 @@ import org.springframework.stereotype.Service;
 import com.project.foodPartner.model.fcustomers;
 import com.project.foodPartner.model.orders;
 import com.project.foodPartner.model.ratingsandreviews;
+import com.project.foodPartner.model.tables;
 import com.project.foodPartner.repo.foodusersrepo;
 import com.project.foodPartner.repo.ordersrepo;
 import com.project.foodPartner.repo.ratingReviewrepo;
+import com.project.foodPartner.repo.tablesrepo;
 import com.project.foodPartner.service.afterLoginService;
 
 @Service
@@ -24,6 +26,9 @@ public class afterLoginServicesimpl implements afterLoginService {
 	
 	@Autowired
 	private ratingReviewrepo rrepo;
+	
+	@Autowired
+	private tablesrepo trepo;
 	
 	public String updateUser(fcustomers userDetails) {
 		fcustomers userObj = frepo.save(userDetails);
@@ -57,6 +62,24 @@ public class afterLoginServicesimpl implements afterLoginService {
 		rrepo.save(custFeedback);
 		String message = "Thankyou for feedback";
 		return message;
+	}
+
+
+	public String updateTableRecord(tables tabObj) {
+		String messageString = "UPDATED table detail";
+		trepo.save(tabObj);
+		return messageString;
+	}
+
+	public tables getTableDetails(String tableId) {
+		tables tabObj = trepo.findByTableid(tableId);
+		return tabObj;
+	}
+
+	@Override
+	public List<tables> getAllTables() {
+		List<tables> tabObjs = trepo.findAll();
+		return tabObjs;
 	}
 
 }

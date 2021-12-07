@@ -13,7 +13,7 @@ import lombok.Data;
 public class tables {
 	@Id
 	@Column(name="tableid")
-	private String tableId;
+	private String tableid;
 	@Column(name="custid")
 	private String custId;
 	@Column(name="tablestaus")

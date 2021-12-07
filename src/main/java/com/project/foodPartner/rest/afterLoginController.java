@@ -20,12 +20,13 @@ import com.project.foodPartner.model.FoodUserDetails;
 import com.project.foodPartner.model.fcustomers;
 import com.project.foodPartner.model.orders;
 import com.project.foodPartner.model.ratingsandreviews;
+import com.project.foodPartner.model.tables;
 import com.project.foodPartner.service.afterLoginService;
 
 @RestController
 @RequestMapping("/check")
 //@CrossOrigin(origins = "")
-@CrossOrigin(originPatterns = {"http://localhost:4200","http://192.168.1.100:4200"})
+@CrossOrigin(originPatterns = {"http://localhost:62299","http://192.168.1.102:4200"})
 public class afterLoginController {
 	
 	@Autowired
@@ -81,5 +82,12 @@ public class afterLoginController {
 		String body = alService.submitFeedback(feedbackDetails);
 		return ResponseEntity.ok(body);
 	}
+	
+	@PostMapping("/updateTable")
+	public ResponseEntity<String> updateTablesRecord(@RequestBody tables tabObj){
+		String body = alService.updateTableRecord(tabObj);
+		return ResponseEntity.ok(body);
+	}
+	
 
 }
