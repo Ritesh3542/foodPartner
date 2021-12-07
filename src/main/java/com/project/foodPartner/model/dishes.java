@@ -1,6 +1,8 @@
 package com.project.foodPartner.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,9 @@ public class dishes {
 	@Column(name="dishname")
 	private String dname;
 	
+	@Column(name="DishDescription")
+	private String ddesc;
+	
 	@Column(name="dishphoto")
 	private String dphoto;
 	
@@ -32,13 +37,13 @@ public class dishes {
 	private Float drating;
 	
 	@Column(name="dishreviews")
-	private String[] dreview;
+	private String dreview;
 	
 	@Column(name="dishvegnonveg")
 	private Integer dvn;
 	
 	@Column(name="dishimages")
-	private String[] dimages;
+	private String dimages;
 	
 	@Column(name="dishstatustoday")
 	private Integer dstatustoday;
