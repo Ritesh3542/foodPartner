@@ -26,7 +26,7 @@ import com.project.foodPartner.service.afterLoginService;
 @RestController
 @RequestMapping("/check")
 //@CrossOrigin(origins = "")
-@CrossOrigin(originPatterns = {"http://localhost:62299","http://192.168.1.102:4200"})
+@CrossOrigin(originPatterns = {"http://localhost:4200","http://192.168.1.102:4200"})
 public class afterLoginController {
 	
 	@Autowired

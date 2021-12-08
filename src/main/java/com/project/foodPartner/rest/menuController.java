@@ -14,7 +14,7 @@ import com.project.foodPartner.service.MenuService;
 
 @RestController
 @RequestMapping("/menu")
-@CrossOrigin(originPatterns = {"http://localhost:62299","http://192.168.1.102:4200"})
+@CrossOrigin(originPatterns = {"http://localhost:4200","http://192.168.1.102:4200"})
 
 public class menuController {
 	
